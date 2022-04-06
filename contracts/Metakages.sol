@@ -33,9 +33,9 @@ contract Metakages is ERC721A, Ownable {
     mapping(address => uint256) addressBlockBought;
 
     address public constant ADDRESS_1 =
-        0xaf5a6b093BCD2EF9CE9Ffc5555C71DaE6E58BEF9; //Owner
+        0x792c97d764148134AEA12B4f0Df362076F770C31; //Owner
     address public constant ADDRESS_2 =
-        0xaF213E546fF026f5e048bD71513247eC113fC60a; //ZL
+        0x188A3c584F0dE9ee0eABe04316A94A41F0867C0C; //ZL
 
     address signer;
     mapping(bytes32 => bool) public usedDigests;

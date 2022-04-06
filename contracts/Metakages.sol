@@ -113,7 +113,10 @@ contract Metakages is ERC721A, Ownable {
             numberMinted(msg.sender) + numberOfTokens <= MINT_LIMIT,
             "EXCEED_MINT_LIMIT"
         );
-        require(1 + totalSupply() <= MAX_SUPPLY, "NOT_ENOUGH_SUPPLY");
+        require(
+            numberOfTokens + totalSupply() <= MAX_SUPPLY,
+            "NOT_ENOUGH_SUPPLY"
+        );
         if (freeMints[msg.sender]) {
             require(
                 numberMinted(msg.sender) + numberOfTokens <= maxPresaleMint + 1,
@@ -129,8 +132,8 @@ contract Metakages is ERC721A, Ownable {
         addressBlockBought[msg.sender] = block.timestamp;
         _safeMint(msg.sender, numberOfTokens);
     }
-    
-        function freeMint(bytes32[] memory proof) external isSecured(3) {
+
+    function freeMint(bytes32[] memory proof) external isSecured(3) {
         bytes32 leaf = keccak256(abi.encodePacked(msg.sender));
         require(MerkleProof.verify(proof, freemintRoot, leaf), "PROOF_INVALID");
         require(1 + totalSupply() <= MAX_SUPPLY, "NOT_ENOUGH_SUPPLY");

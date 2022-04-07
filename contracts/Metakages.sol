@@ -10,13 +10,11 @@ contract Metakages is ERC721A, Ownable {
     uint256 public constant RESERVE_SUPPLY = 30;
     uint256 public constant MAX_SUPPLY = 3000;
 
-    //Create Setters for price
     uint256 public WL_PRICE = 0.09 ether;
     uint256 public PUBLIC_PRICE = 0.1 ether;
 
     uint256 public constant MINT_LIMIT = 4;
 
-    //Create Setters for status
     bool public isPublicSaleActive = false;
     bool public isPresaleActive = false;
 
@@ -24,7 +22,6 @@ contract Metakages is ERC721A, Ownable {
 
     string private baseURI = "";
 
-    //Make setters for the 3
     bytes32 presaleRoot_1;
     bytes32 presaleRoot_2;
     bytes32 freemintRoot;

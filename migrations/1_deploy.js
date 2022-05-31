@@ -6,7 +6,7 @@
 //     );
 // };
 
-const Kage = artifacts.require('Kage');
+const Kage = artifacts.require('KageV2');
 
 module.exports = async function (deployer) {
   await deployer.deploy(
